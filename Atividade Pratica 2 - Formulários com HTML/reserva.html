@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Reserva de Viagem</title>
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert('Reserva enviada com sucesso!');
+    }
+  </script>
+</head>
+<body>
+<h1>Formulário de Reserva de Viagem</h1>
+
+<form onsubmit="handleSubmit(event)">
+  <fieldset>
+    <legend>Informações Pessoais</legend>
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+  </fieldset>
+
+  <fieldset>
+    <legend>Serviços Desejados</legend>
+
+    <label><input type="checkbox" name="servicos" value="passagens"> Compra de Passagens</label>
+    <br>
+
+    <label><input type="checkbox" name="servicos" value="hospedagem"> Reserva de Hospedagem</label>
+    <br>
+
+    <label><input type="checkbox" name="servicos" value="veiculos"> Aluguel de Veículos</label>
+    <br><br>
+  </fieldset>
+
+  <!-- Agrupando forma de pagamento -->
+  <fieldset>
+    <legend>Forma de Pagamento</legend>
+
+    <label><input type="radio" name="pagamento" value="cartao" required> Cartão de Crédito</label>
+    <br>
+
+    <label><input type="radio" name="pagamento" value="boleto"> Boleto</label>
+    <br>
+
+    <label><input type="radio" name="pagamento" value="pix"> PIX</label>
+    <br><br>
+  </fieldset>
+
+  <!-- Agrupando prazo de pagamento -->
+  <fieldset>
+    <legend>Prazo de Pagamento</legend>
+
+    <label for="prazo">Escolha o prazo:</label>
+    <select id="prazo" name="prazo" required>
+      <option value="avista">À Vista</option>
+      <option value="cinco-vezes">Cinco Vezes Sem Juros</option>
+      <option value="dez-vezes">Dez Vezes Com Juros</option>
+    </select>
+    <br><br>
+  </fieldset>
+
+  <!-- Botão de envio -->
+  <input type="submit" value="Enviar Reserva">
+</form>
+</body>
+</html>
